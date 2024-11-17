@@ -1,0 +1,54 @@
+{
+  "profiles": [
+    {
+      "name": "John Doe",
+      "image": "./assets/images/profile.png",
+      "description": "John Doe is a software developer with a passion for coding and technology. He has been working in the industry for over 5 years, specializing in web development and full-stack applications. Outside of work, John enjoys playing video games, hiking, and photography."
+    },
+    {
+      "name": "Jane Smith",
+      "image": "./assets/images/project1.png",
+      "description": "Jane Smith is a graphic designer with a creative mind. She specializes in UI/UX design and enjoys working with clients to build visually appealing and user-friendly designs."
+    },
+    {
+      "name": "Michael Johnson",
+      "image": "/assets/images/project1.png",
+      "description": "Michael is a digital marketer with a focus on SEO and content strategy. He enjoys helping businesses grow online and increase their digital presence."
+    },
+    {
+      "name": "Emily Davis",
+      "image": "/assets/images/project1.png",
+      "description": "Emily is a data analyst who loves working with data to uncover trends and insights that help businesses make informed decisions."
+    },
+    {
+      "name": "Chris Brown",
+      "image": "/assets/images/project1.png",
+      "description": "Chris is a software engineer with a knack for solving complex problems. He works with both front-end and back-end technologies to create seamless user experiences."
+    },
+    {
+      "name": "Sarah Wilson",
+      "image": "https://images.pexels.com/photos/4139883/pexels-photo-4139883.jpeg",
+      "description": "Sarah is a project manager who specializes in agile methodologies. She loves collaborating with teams to deliver successful projects on time."
+    },
+    {
+      "name": "David Lee",
+      "image": "https://images.pexels.com/photos/2098256/pexels-photo-2098256.jpeg",
+      "description": "David is a product designer who focuses on creating intuitive and functional designs for mobile applications and websites."
+    },
+    {
+      "name": "Olivia Moore",
+      "image": "https://images.pexels.com/photos/2042451/pexels-photo-2042451.jpeg",
+      "description": "Olivia is a content writer with a passion for storytelling. She creates engaging content that connects with readers and informs them on various topics."
+    },
+    {
+      "name": "Daniel Harris",
+      "image": "https://images.pexels.com/photos/3807621/pexels-photo-3807621.jpeg",
+      "description": "Daniel is a software architect who designs and oversees the development of large-scale systems. He ensures that all components of a project work together seamlessly."
+    },
+    {
+      "name": "Megan Carter",
+      "image": "https://images.pexels.com/photos/1534707/pexels-photo-1534707.jpeg",
+      "description": "Megan is an IT consultant who helps businesses implement technology solutions to optimize their operations and improve efficiency."
+    }
+  ]
+}
