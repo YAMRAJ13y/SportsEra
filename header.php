@@ -1,6 +1,13 @@
 <?php
 session_start();
-$isLoggedIn = isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true;
+include("authenication.php");
+include("connection.php");
+
+$id = $_SESSION['user_id'];
+$q = "select * from users where id=$id";
+$row = mysqli_query($connect, $q);
+$user = mysqli_fetch_array($row);
+
 ?>
 
 <!doctype html>
@@ -9,7 +16,7 @@ $isLoggedIn = isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Elixir - Bootstrap Template</title>
+    <title>SportsEra</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
@@ -32,33 +39,33 @@ $isLoggedIn = isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#hero">Home</a>
+                        <a class="nav-link" href="./index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="events.php">Event</a> 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Sports</a>
+                    <a class="nav-link" href="posts.php">Posts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Our Top Chosen</a>
+                        
+                        <a class="nav-link" href="./aboutus.php">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./post.php">Post</a>
+                        <a class="nav-link" href="./contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="./user.php" style='text-transform:uppercase;'>Hi,<?php echo $user['fullName'];?></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="logout.php">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                    </a>
                     </li>
                 </ul>
 
                 <!-- Conditional Login/Profile Button -->
-                <?php if ($isLoggedIn): ?>
-                    <a href="profile.php" class="btn btn-brand ms-lg-3">
-                        <img src="./assets/images/profile.png" alt="Profile" class="rounded-circle" width="40">
-                    </a>
-                <?php else: ?>
-                    <a href="login.php" class="btn btn-brand ms-lg-3 bg-primary text-light">Login</a>
-                <?php endif; ?>
+
             </div>
         </div>
     </nav>

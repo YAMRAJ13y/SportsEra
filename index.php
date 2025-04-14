@@ -20,24 +20,24 @@
                     <div class="section-title">
                         <h1 class="display-4 fw-semibold">About us</h1>
                         <div class="line"></div>
-                        <p>We love to craft digital experiances for brands rather than crap and more lorem ipsums and do crazy skills</p>
+                        <p>Welcome to SportsEra, your ultimate destination for sports enthusiasts and players alike! </p>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6" data-aos="fade-down" data-aos-delay="50">
-                    <img src="./assets/images/about.jpg" alt="">
+                    <img src="./assets/images/join.jpg" alt="">
                 </div>
                 <div data-aos="fade-down" data-aos-delay="150" class="col-lg-5">
                     <h1>SportsEra</h1>
-                    <p class="mt-3 mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quo reiciendis ad.</p>
+                    <p class="mt-3 mb-4"></p>
                     <div class="d-flex pt-4 mb-3">
                         <div class="iconbox me-4">
                             <i class="ri-mail-send-fill"></i>
                         </div>
                         <div>
                             <h5>Communication</h5>
-                            <p>Consectetur adipisicing elit. Corporis nesciunt aut temporibus!</p>
+                            <p>LEts communicate together, sports social!</p>
                         </div>
                     </div>
                     <div class="d-flex mb-3">
@@ -46,7 +46,7 @@
                         </div>
                         <div>
                             <h5>Sports Community</h5>
-                            <p>Consectetur adipisicing elit. Corporis nesciunt aut temporibus!</p>
+                            <p>a community based on Sports!</p>
                         </div>
                     </div>
                     <div class="d-flex">
@@ -55,7 +55,7 @@
                         </div>
                         <div>
                             <h5>Sports Events</h5>
-                            <p>Consectetur adipisicing elit. Corporis nesciunt aut temporibus!</p>
+                            <p>Get Ready For The events!</p>
                         </div>
                     </div>
                 </div>
@@ -69,9 +69,9 @@
             <div class="row">
                 <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
                     <div class="section-title">
-                        <h1 class="display-4 fw-semibold">Awesome Services</h1>
+                        <h1 class="display-4 fw-semibold">Sports</h1>
                         <div class="line"></div>
-                        <p>We love to craft digital experiances for brands rather than crap and more lorem ipsums and do crazy skills</p>
+                        <p>there are many sports. and we love to give u best</p>
                     </div>
                 </div>
             </div>
@@ -136,7 +136,7 @@
 
 
 
-    <!-- PORTFOLIO -->
+    <!-- TOP cHOOOSEN -->
     <section id="portfolio" class="section-padding">
         <div class="container">
             <div class="row">
@@ -144,7 +144,7 @@
                     <div class="section-title">
                         <h1 class="display-4 fw-semibold">Our Top Chooosen</h1>
                         <div class="line"></div>
-                        <p>We love to craft digital experiances for brands rather than crap and more lorem ipsums and do crazy skills</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -195,45 +195,4 @@
         </div>
     </section>
     
-
-
-    
-    <!-- CONTACT -->
-    <section class="section-padding bg-light" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
-                    <div class="section-title">
-                        <h1 class="display-4 text-white fw-semibold">Contact Us</h1>
-                        <div class="line bg-white"></div>
-                        <p class="text-white">We love to craft digital experiances for brands rather than crap and more lorem ipsums and do crazy skills</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
-                <div class="col-lg-8">
-                    <form action="#" class="row g-3 p-lg-5 p-4 bg-white theme-shadow">
-                        <div class="form-group col-lg-6">
-                            <input type="text" class="form-control" placeholder="Enter first name">
-                        </div>
-                        <div class="form-group col-lg-6">
-                            <input type="text" class="form-control" placeholder="Enter last name">
-                        </div>
-                        <div class="form-group col-lg-12">
-                            <input type="email" class="form-control" placeholder="Enter Email address">
-                        </div>
-                        <div class="form-group col-lg-12">
-                            <input type="text" class="form-control" placeholder="Enter subject">
-                        </div>
-                        <div class="form-group col-lg-12">
-                            <textarea name="message" rows="5" class="form-control" placeholder="Enter Message"></textarea>
-                        </div>
-                        <div class="form-group col-lg-12 d-grid">
-                            <button class="btn btn-brand">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
     <?php include "footer.php" ?>

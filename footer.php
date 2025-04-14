@@ -4,26 +4,26 @@
             <div class="container">
                 <div class="row gy-5">
                     <div class="col-lg-3 col-sm-6">
-                        <a href="#"><img src="./assets/images/logo-white.svg" alt=""></a>
+                        <a href="#"><img src="./assets/images/logo.png" alt=""></a>
                         <div class="line"></div>
                         <p>Sports Unite US</p>
                         <div class="social-icons">
-                            <a href="#"><i class="ri-twitter-fill"></i></a>
-                            <a href="#"><i class="ri-instagram-fill"></i></a>
-                            <a href="#"><i class="ri-github-fill"></i></a>
-                            <a href="#"><i class="ri-dribbble-fill"></i></a>
+                            <a href="https://twitter.com"><i class="ri-twitter-fill"></i></a>
+                            <a href="https://instagram.com"><i class="ri-instagram-fill"></i></a>
+                            <a href="https://github.com><i class="ri-github-fill"></i></a>
+                            <a href="https://dribbble.com"><i class="ri-dribbble-fill"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <h5 class="mb-0 text-white">Sports</h5>
                         <div class="line"></div>
                         <ul>
-                            <li><a href="#">Cricket</a></li>
-                            <li><a href="#">Football</a></li>
-                            <li><a href="#">Basketball</a></li>
-                            <li><a href="#">Tennis</a></li>
-                            <li><a href="#">Badminton</a></li>
-                            <li><a href="#">vollyball</a></li>
+                            <li><a href="https://www.espncricinfo.com/">Cricket</a></li>
+                            <li><a href="https://www.fifa.com/">Football</a></li>
+                            <li><a href="https://www.nba.com/">Basketball</a></li>
+                            <li><a href="https://www.atptour.com/">Tennis</a></li>
+                            <li><a href="https://bwfbadminton.com/">Badminton</a></li>
+                            <li><a href="https://www.fivb.com/">vollyball</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-sm-6">
@@ -52,11 +52,9 @@
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-auto">
-                        <p class="mb-0">© Copyright Elixir. All Rights Reserved</p>
+                        <p class="mb-0">© Copyright SportsEra. All Rights Reserved</p>
                     </div>
-                    <div class="col-auto">
-                        <p class="mb-0">Designed with 💜 By <a href="https://www.youtube.com/channel/UCYMEEnLzGGGIpQQ3Nu_sBsQ">SALMAN</a></p>
-                    </div>
+                    
                 </div>
             </div>
         </div>

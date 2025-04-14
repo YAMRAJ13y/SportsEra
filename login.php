@@ -1,146 +1,74 @@
-<?php include "header.php" ?>
-<div class="container d-flex justify-content-center align-items-center vh-100">
-  <div class="card shadow-lg" style="width: 400px;">
-    <div class="card-body">
-      <h2 id="form-title" class="text-center mb-4">Signup</h2>
-
-      <!-- Signup Form -->
-      <form id="signup-form">
-        <div class="mb-3">
-          <label for="signup-email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="signup-email" placeholder="Enter your email" required>
-        </div>
-        <div class="mb-3">
-          <label for="signup-password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="signup-password" placeholder="Enter your password" required>
-        </div>
-        <div class="mb-3">
-          <label for="confirm-password" class="form-label">Confirm Password</label>
-          <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password" required>
-        </div>
-        <button type="button" class="btn btn-primary w-100 mb-3" onclick="signup()">Signup</button>
-        <p class="text-center">
-          Already have an account? 
-          <a href="#" class="text-primary text-decoration-none" onclick="toggleForm()">Login</a>
-        </p>
-      </form>
-
-      <!-- Login Form -->
-      <form id="login-form" style="display: none;">
-        <div class="mb-3">
-          <label for="login-email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="login-email" placeholder="Enter your email" required>
-        </div>
-        <div class="mb-3">
-          <label for="login-password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="login-password" placeholder="Enter your password" required>
-        </div>
-        <button type="button" class="btn btn-primary w-100 mb-3" onclick="login()">Login</button>
-        <p class="text-center">
-          Don't have an account? 
-          <a href="#" class="text-primary text-decoration-none" onclick="toggleForm()">Signup</a>
-        </p>
-      </form>
-
-      <!-- Logout Button -->
-      <button id="logout-btn" class="btn btn-danger w-100 mt-3" style="display: none;" onclick="logout()">Logout</button>
-    </div>
-  </div>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+<?php
+session_start();
+error_reporting(0);
+include("connection.php");
+if(isset($_REQUEST['login'])){
+  extract($_POST);
+  $q = "select * from users where email='$email' and password='$password'";
+  $row = mysqli_query($connect,$q);
+  $user = mysqli_fetch_array($row);
+  if($user){
+    $_SESSION['user_id'] = $user['id'];
+    header("location:index.php");
+  }else{
+    ?>
 <script>
-  // Function to toggle between signup and login forms
-  function toggleForm() {
-    const signupForm = document.getElementById('signup-form');
-    const loginForm = document.getElementById('login-form');
-    const formTitle = document.getElementById('form-title');
-    const logoutBtn = document.getElementById('logout-btn');
-    
-    signupForm.style.display = signupForm.style.display === 'none' ? 'block' : 'none';
-    loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
-    logoutBtn.style.display = 'none';
-    formTitle.textContent = signupForm.style.display === 'block' ? 'Signup' : 'Login';
-  }
-
-  // Mock data storage
-  let users = {};
-
-  // Signup function
-  function signup() {
-    const email = document.getElementById('signup-email').value;
-    const password = document.getElementById('signup-password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
-
-    if (password !== confirmPassword) {
-      alert('Passwords do not match!');
-      return;
-    }
-
-    if (users[email]) {
-      alert('User already exists!');
-      return;
-    }
-
-    users[email] = password;
-    alert('Signup successful! Please login.');
-    toggleForm();
-  }
-
-  // Login function
-  function login() {
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('login-password').value;
-
-    if (users[email] && users[email] === password) {
-      alert('Login successful!');
-      // Store the login state in localStorage
-      localStorage.setItem('isLoggedIn', true);
-      localStorage.setItem('loggedInUser', email);
-      window.location.href = "post.php";
-      checkLoginState();
-    } else {
-      alert('Invalid email or password!');
-    }
-  }
-
-  // Logout function
-  function logout() {
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('loggedInUser');
-    alert('You have been logged out!');
-    window.location.reload();
-  }
-
-  // Check login state on page load
-  function checkLoginState() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    const loggedInUser = localStorage.getItem('loggedInUser');
-    const signupForm = document.getElementById('signup-form');
-    const loginForm = document.getElementById('login-form');
-    const logoutBtn = document.getElementById('logout-btn');
-    const formTitle = document.getElementById('form-title');
-
-    if (isLoggedIn) {
-      alert(`Welcome back, ${loggedInUser}!`);
-      signupForm.style.display = 'none';
-      loginForm.style.display = 'none';
-      logoutBtn.style.display = 'block';
-      formTitle.textContent = `Welcome, ${loggedInUser}`;
-    } else {
-      signupForm.style.display = 'block';
-      loginForm.style.display = 'none';
-      logoutBtn.style.display = 'none';
-      formTitle.textContent = 'Signup';
-    }
-  }
-
-  // Initialize login state on page load
-  document.addEventListener('DOMContentLoaded', checkLoginState);
+alert("Email or Password went wrong !")
 </script>
+<?php 
+  }
+}
+?>
 
-<?php include "footer.php" ?>
+<!doctype html>
+<html lang="en">
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cumque!
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SportsEra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow-lg" style="width: 400px;">
+            <div class="card-body">
+                <h2 id="form-title" class="text-center mb-4">Login</h2>
+
+                <!-- Signup Form -->
+                <form id="signup-form" method='post'>
+                    <div class="mb-3">
+                        <label for="signup-email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="signup-email" placeholder="Enter your email"
+                            name='email' required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signup-password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signup-password"
+                            placeholder="Enter your password" name='password' required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mb-3" name='login'>Sign In</button>
+                    <p class="text-center">
+                        Create new account
+                        <a href="register.php" class="text-primary text-decoration-none">Register</a>
+                    </p>
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    </script>
+</body>
+
+</html>
